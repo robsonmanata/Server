@@ -3,13 +3,19 @@ import mongoose from 'mongoose';
 const postSchema = mongoose.Schema({
     title: String,
     message: String,
+    name: String,
     creator: String,
     tags: [String],
     selectedFile: String,
-    likeCount: {
-        type: Number,
-        default: 0,
-    },
+    profilepic: String,
+    likes: { type: [String], default: [] },
+    //now
+    Comments: [
+        {
+            comment: String,
+            commenterpic: String
+        }
+    ],
     createdAt: {
         type: Date,
         default: new Date(),
